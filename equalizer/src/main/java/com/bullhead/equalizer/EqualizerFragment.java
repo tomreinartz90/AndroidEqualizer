@@ -16,10 +16,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
+
 import com.db.chart.model.LineSet;
 import com.db.chart.view.AxisController;
 import com.db.chart.view.ChartView;
@@ -76,8 +78,9 @@ public class EqualizerFragment extends Fragment {
         Bundle args = new Bundle();
 
         EqualizerFragment fragment = new EqualizerFragment();
-        fragment.audioSesionId = audioSessionId;
         fragment.setArguments(args);
+        fragment.audioSesionId = audioSessionId;
+
         return fragment;
     }
 
@@ -95,8 +98,8 @@ public class EqualizerFragment extends Fragment {
         presetReverb = new PresetReverb(0, audioSesionId);
         presetReverb.setPreset(PresetReverb.PRESET_NONE);
         presetReverb.setEnabled(true);
-        Settings.equalizerModel = new EqualizerModel();
         mEqualizer.setEnabled(true);
+        Settings.equalizerModel = new EqualizerModel();
     }
 
     @Override
